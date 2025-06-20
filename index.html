@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reverse String</title>
+    <h1>Reverse the String</h1>
+  </head>
+  <body>
+    <input type="text" id="ipString" />
+    <button onclick="reverseString()">Reverse</button>
+
+    <script>
+      function reverseString() {
+        const actualWord = document.getElementById("ipString").value;
+        let reversedWord = "";
+        for (let i = 0; i < actualWord.length; i++) {
+          reversedWord = actualWord[i] + reversedWord;
+        }
+        alert(reversedWord);
+      }
+    </script>
+  </body>
+</html>
