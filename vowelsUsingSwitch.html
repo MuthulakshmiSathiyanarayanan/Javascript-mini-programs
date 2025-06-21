@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vowel Count with Switch Case</title>
+    <h1>Vowel</h1>
+  </head>
+  <body>
+    <p id="input">Hello World</p>
+    <p id="output"></p>
+    <script>
+      const input = document.getElementById("input").innerText;
+
+      function countVowels(input) {
+        let vowelCount = 0;
+        const lowerCase = input.toLowerCase();
+        for (let char of lowerCase) {
+          switch (char) {
+            case "a":
+            case "e":
+            case "i":
+            case "o":
+            case "u":
+              vowelCount++;
+              break;
+          }
+        }
+
+        return vowelCount;
+      }
+
+      const totalVowels = countVowels(input);
+      document.getElementById(
+        "output"
+      ).innerText = `Total vowels in "${input}" = ${totalVowels}`;
+    </script>
+  </body>
+</html>
