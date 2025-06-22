@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>factorial</title>
+    <h1>factorial of a number</h1>
+  </head>
+  <body>
+    <input type="number" id="integerN" />
+    <button onclick="factorial()">Find Factorial</button>
+    <p id="output"></p>
+
+    <script>
+      function factorial() {
+        let n = parseInt(document.getElementById("integerN").value);
+
+        function factorialFucntion(n) {
+          if (n === 0 || n === 1) return 1;
+          return n * factorialFucntion(n - 1);
+        }
+
+        const x = factorialFucntion(n);
+        document.getElementById("output").innerHTML = `${x}`;
+      }
+    </script>
+  </body>
+</html>
