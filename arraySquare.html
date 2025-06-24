@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Check Squared Values</title>
+  </head>
+  <body>
+    <h2>Check if squares of arr1 are in arr2</h2>
+
+    <label>Enter Array 1 </label><br />
+    <input type="text" id="array1" /><br /><br />
+
+    <label>Enter Array 2</label><br />
+    <input type="text" id="array2" /><br /><br />
+
+    <button onclick="checkSquares()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+      function hasSquaredValues(inputStr1, inputStr2) {
+        const arr1 = inputStr1.split(/[\s,]+/).map(Number);
+        const arr2 = inputStr2.split(/[\s,]+/).map(Number);
+
+        if (arr1.some(isNaN) || arr2.some(isNaN)) {
+          return false; //not a number
+        }
+
+        for (let num of arr1) {
+          if (!arr2.includes(num * num)) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function checkSquares() {
+        const input1 = document.getElementById("array1").value;
+        const input2 = document.getElementById("array2").value;
+
+        const result = hasSquaredValues(input1, input2);
+        document.getElementById("result").textContent = result
+          ? "True ▶️"
+          : "False ⏸️"; //used play pause icon for another prgrm ref. purpose
+      }
+    </script>
+  </body>
+</html>
